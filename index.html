@@ -27,9 +27,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--blush-light);
@@ -37,12 +35,11 @@ body {
   overflow-x: hidden;
 }
 
-/* ── SCROLLBAR ───────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--blush); }
 ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 3px; }
 
-/* ── NAV ─────────────────────────────────────── */
+/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: rgba(59,31,43,0.96);
@@ -51,20 +48,16 @@ nav {
   padding: 0 40px; height: 64px;
   border-bottom: 1px solid rgba(201,150,58,0.25);
 }
-.nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px; color: var(--white); letter-spacing: 1px;
-}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); letter-spacing: 1px; }
 .nav-logo span { color: var(--gold); }
 .nav-links { display: flex; gap: 28px; list-style: none; }
 .nav-links a {
   font-size: 12px; color: rgba(255,255,255,0.7); text-decoration: none;
-  letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500;
-  transition: color 0.2s;
+  letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--gold); }
 
-/* ── HERO ────────────────────────────────────── */
+/* HERO */
 .hero {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 50%, #5C2840 100%);
@@ -73,15 +66,13 @@ nav {
   padding: 100px 60px 60px;
 }
 .hero::before {
-  content: '';
-  position: absolute; top: -100px; right: -100px;
+  content: ''; position: absolute; top: -100px; right: -100px;
   width: 600px; height: 600px; border-radius: 50%;
   background: radial-gradient(circle, rgba(201,150,58,0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero::after {
-  content: '';
-  position: absolute; bottom: -80px; left: -80px;
+  content: ''; position: absolute; bottom: -80px; left: -80px;
   width: 400px; height: 400px; border-radius: 50%;
   background: radial-gradient(circle, rgba(162,103,105,0.15) 0%, transparent 70%);
   pointer-events: none;
@@ -101,21 +92,14 @@ nav {
   content: ''; width: 6px; height: 6px; border-radius: 50%;
   background: var(--gold); animation: pulse 2s infinite;
 }
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.7); }
-}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(42px, 5vw, 72px);
-  line-height: 1.08; color: var(--white); margin-bottom: 20px;
-  font-weight: 900;
+  line-height: 1.08; color: var(--white); margin-bottom: 20px; font-weight: 900;
 }
 .hero h1 em { color: var(--gold); font-style: italic; }
-.hero-sub {
-  font-size: 16px; color: rgba(255,255,255,0.6);
-  line-height: 1.7; margin-bottom: 40px; max-width: 480px;
-}
+.hero-sub { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 40px; max-width: 480px; }
 .hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
 .btn-gold {
   background: var(--gold); color: var(--plum-dark);
@@ -130,182 +114,206 @@ nav {
   text-decoration: none; transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px;
 }
 .btn-outline:hover { border-color: var(--rose-light); color: var(--rose-light); }
-
-/* Hero right — stat cards */
-.hero-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 16px; align-content: start; padding-top: 20px;
-}
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: start; padding-top: 20px; }
 .stat-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px; padding: 24px 20px;
-  transition: all 0.3s;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 24px 20px; transition: all 0.3s;
 }
-.stat-card:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(201,150,58,0.4);
-  transform: translateY(-3px);
-}
-.stat-card .num {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px; font-weight: 900; color: var(--gold);
-  line-height: 1;
-}
-.stat-card .label {
-  font-size: 12px; color: rgba(255,255,255,0.5);
-  margin-top: 6px; letter-spacing: 0.5px;
-}
-.stat-card .context {
-  font-size: 11px; color: rgba(255,255,255,0.35);
-  margin-top: 4px;
-}
+.stat-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(201,150,58,0.4); transform: translateY(-3px); }
+.stat-card .num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 900; color: var(--gold); line-height: 1; }
+.stat-card .label { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; letter-spacing: 0.5px; }
+.stat-card .context { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 4px; }
 .stat-card.wide { grid-column: span 2; }
 
-/* ── SECTION COMMONS ─────────────────────────── */
+/* SECTION COMMONS */
 section { padding: 100px 60px; }
 .section-inner { max-width: 1300px; margin: 0 auto; }
 .section-tag {
-  display: inline-block;
-  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--gold); font-weight: 600; margin-bottom: 14px;
-  font-family: 'DM Mono', monospace;
+  display: inline-block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); font-weight: 600; margin-bottom: 14px; font-family: 'DM Mono', monospace;
 }
 .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 700; line-height: 1.15;
-  color: var(--plum); margin-bottom: 16px;
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700; line-height: 1.15; color: var(--plum); margin-bottom: 16px;
 }
 .section-title em { color: var(--rose); font-style: italic; }
-.section-desc {
-  font-size: 16px; color: var(--muted);
-  line-height: 1.75; max-width: 620px;
-}
+.section-desc { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 620px; }
 
-/* ── OVERVIEW STRIP ──────────────────────────── */
-.overview {
-  background: var(--plum);
-  padding: 60px;
-}
+/* OVERVIEW */
+.overview { background: var(--plum); padding: 60px; }
 .overview-grid {
   max-width: 1300px; margin: 0 auto;
   display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
   background: rgba(255,255,255,0.1);
 }
-.overview-item {
-  background: var(--plum);
-  padding: 36px 28px; text-align: center;
-  transition: background 0.25s;
-}
+.overview-item { background: var(--plum); padding: 36px 28px; text-align: center; transition: background 0.25s; }
 .overview-item:hover { background: var(--plum-mid); }
 .overview-item .ico { font-size: 28px; margin-bottom: 12px; }
-.overview-item strong {
-  display: block; font-size: 13px; color: var(--white);
-  letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600;
-}
+.overview-item strong { display: block; font-size: 13px; color: var(--white); letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600; }
 .overview-item p { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5; }
 
-/* ── TECHNICAL ────────────────────────────────── */
+/* TECHNICAL */
 .technical { background: var(--blush-light); }
-.audit-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-  margin-top: 60px;
-}
+.audit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 60px; }
 .audit-card {
-  background: var(--white);
-  border-radius: 12px; overflow: hidden;
-  box-shadow: 0 2px 20px rgba(59,31,43,0.07);
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--white); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 20px rgba(59,31,43,0.07); transition: transform 0.3s, box-shadow 0.3s;
 }
 .audit-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(59,31,43,0.12); }
-.audit-head {
-  padding: 18px 24px;
-  display: flex; align-items: center; justify-content: space-between;
-}
+.audit-head { padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
 .audit-head h3 { font-size: 15px; color: var(--white); font-weight: 600; }
-.badge {
-  font-size: 10px; padding: 3px 10px; border-radius: 100px;
-  font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
-}
+.badge { font-size: 10px; padding: 3px 10px; border-radius: 100px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
 .badge.warn { background: rgba(255,255,255,0.2); color: var(--white); }
 .badge.ok { background: rgba(255,255,255,0.25); color: var(--white); }
 .audit-body { padding: 20px 24px; }
 .audit-body p { font-size: 13.5px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
 .audit-actions { display: flex; flex-direction: column; gap: 8px; }
-.action-item {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 12.5px; color: var(--text-dark);
-}
-.action-item::before {
-  content: '→'; color: var(--gold); font-weight: 700;
-  flex-shrink: 0; margin-top: 1px;
-}
+.action-item { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; color: var(--text-dark); }
+.action-item::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
-/* ── COMPETITOR ───────────────────────────────── */
+/* ══════════════════════════════════════════
+   COMPETITORS — FULLY REBUILT
+══════════════════════════════════════════ */
 .competitors { background: var(--plum-dark); }
 .competitors .section-title { color: var(--white); }
 .competitors .section-desc { color: rgba(255,255,255,0.5); }
-.comp-table-wrap {
-  margin-top: 60px; overflow-x: auto;
-  border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);
+
+/* Vivace spotlight */
+.vivace-spotlight {
+  margin-top: 60px;
+  background: linear-gradient(135deg, rgba(201,150,58,0.18) 0%, rgba(162,103,105,0.12) 100%);
+  border: 1px solid rgba(201,150,58,0.45);
+  border-radius: 16px; padding: 36px 40px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;
+  position: relative; overflow: hidden;
 }
-table { width: 100%; border-collapse: collapse; }
-thead tr { background: rgba(201,150,58,0.15); }
-th {
-  padding: 16px 20px; font-size: 11px; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--gold); text-align: left;
-  font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.08);
+.vivace-spotlight::before {
+  content: 'VIVACE';
+  position: absolute; top: -20px; right: -10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 120px; font-weight: 900; letter-spacing: -4px;
+  color: rgba(201,150,58,0.06); pointer-events: none; user-select: none;
 }
-td {
-  padding: 16px 20px; font-size: 13px; color: rgba(255,255,255,0.75);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+.vs-header { grid-column: span 3; }
+.vs-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; color: var(--gold); font-weight: 700; margin-bottom: 6px;
 }
-tr:last-child td { border-bottom: none; }
-tr:hover td { background: rgba(255,255,255,0.04); color: var(--white); }
-.da-bar {
-  display: flex; align-items: center; gap: 10px;
+.vs-header p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.vs-stat-col { display: flex; flex-direction: column; gap: 14px; }
+.vs-stat {
+  background: rgba(255,255,255,0.06); border-radius: 10px; padding: 16px 18px;
+  border-left: 3px solid var(--gold);
 }
-.da-track {
-  width: 80px; height: 4px; background: rgba(255,255,255,0.1);
-  border-radius: 2px; overflow: hidden;
+.vs-stat .vs-val { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); font-weight: 900; }
+.vs-stat .vs-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+/* Vivace Win Path */
+.win-path {
+  margin-top: 28px; grid-column: span 3;
+  background: rgba(201,150,58,0.1); border-radius: 12px; padding: 24px 28px;
+  border: 1px solid rgba(201,150,58,0.25);
 }
-.da-fill { height: 100%; border-radius: 2px; background: var(--rose); }
-.edge-badge {
-  font-size: 11px; color: #4CAF50; font-weight: 600;
+.win-path h4 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 16px; }
+.win-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.win-step {
+  background: rgba(255,255,255,0.05); border-radius: 8px; padding: 14px 16px;
+  border-top: 2px solid var(--gold); text-align: center;
 }
-.swot-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 16px; margin-top: 40px;
+.win-step .ws-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); margin-bottom: 6px; font-weight: 700; }
+.win-step p { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+/* Competitor cards */
+.comp-cards-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; color: var(--white); margin: 56px 0 28px;
 }
-.swot-card {
-  border-radius: 10px; padding: 24px 20px;
+.comp-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 56px; }
+.comp-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; overflow: hidden; transition: all 0.3s;
 }
-.swot-card h4 {
-  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  font-weight: 700; margin-bottom: 12px;
+.comp-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); border-color: rgba(162,103,105,0.4); }
+.comp-card-head { padding: 20px 22px 16px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.comp-card-head .comp-name { font-size: 15px; color: var(--white); font-weight: 700; margin-bottom: 4px; }
+.comp-card-head .comp-location { font-size: 11px; color: var(--rose-light); letter-spacing: 0.5px; }
+.comp-da-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.comp-da-label { font-size: 10px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; width: 24px; }
+.comp-da-track { flex: 1; height: 5px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+.comp-da-fill { height: 100%; border-radius: 3px; }
+.comp-da-val { font-size: 11px; color: rgba(255,255,255,0.5); font-family: 'DM Mono', monospace; width: 40px; text-align: right; }
+.comp-card-body { padding: 18px 22px; }
+.comp-desc { font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 14px; }
+.comp-services { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+.comp-service-tag {
+  font-size: 10px; padding: 3px 9px; border-radius: 100px;
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.1);
 }
+.comp-edge-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+.comp-edge-label { font-size: 10px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 1px; }
+.comp-edge-val { font-size: 11px; color: #4CAF50; font-weight: 700; }
+
+/* SW section for each competitor */
+.comp-sw { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; }
+.comp-sw-col h5 { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+.comp-sw-col.s h5 { color: #4CAF50; }
+.comp-sw-col.w h5 { color: #EF5350; }
+.comp-sw-col ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.comp-sw-col ul li { font-size: 11px; color: rgba(255,255,255,0.5); padding-left: 10px; position: relative; line-height: 1.4; }
+.comp-sw-col.s ul li::before { content: '+'; position: absolute; left: 0; color: #4CAF50; font-weight: 700; font-size: 10px; }
+.comp-sw-col.w ul li::before { content: '−'; position: absolute; left: 0; color: #EF5350; font-weight: 700; font-size: 10px; }
+
+/* SWOT for Vivace */
+.swot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+.swot-card { border-radius: 10px; padding: 24px 20px; }
+.swot-card h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; }
 .swot-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
 .swot-card ul li { font-size: 13px; line-height: 1.5; padding-left: 14px; position: relative; }
 .swot-card ul li::before { content: '·'; position: absolute; left: 0; font-size: 18px; line-height: 1; }
 
-/* ── KEYWORDS ─────────────────────────────────── */
+/* Vivace Winning Moves */
+.winning-moves { margin-top: 56px; }
+.winning-moves h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; color: var(--white); margin-bottom: 24px;
+}
+.moves-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.move-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 24px 22px;
+  border-top: 3px solid;
+  transition: all 0.3s;
+}
+.move-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
+.move-card.priority-1 { border-top-color: var(--gold); }
+.move-card.priority-2 { border-top-color: var(--rose); }
+.move-card.priority-3 { border-top-color: #42A5F5; }
+.move-card .move-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.move-card h4 { font-size: 14px; color: var(--white); font-weight: 600; margin-bottom: 8px; }
+.move-card p { font-size: 12.5px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.move-impact {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px; font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 100px;
+}
+.move-impact.high { background: rgba(201,150,58,0.15); color: var(--gold); }
+.move-impact.medium { background: rgba(162,103,105,0.15); color: var(--rose-light); }
+.move-impact.quick { background: rgba(66,165,245,0.12); color: #90CAF9; }
+
+/* KEYWORDS */
 .keywords { background: var(--blush-light); }
 .kw-filters { display: flex; gap: 10px; margin: 40px 0 24px; flex-wrap: wrap; }
 .kw-filter {
   padding: 8px 18px; border-radius: 100px; font-size: 12px; font-weight: 600;
   border: 1px solid; cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px;
 }
-.kw-filter.active, .kw-filter:hover {
-  background: var(--plum); border-color: var(--plum); color: var(--white);
-}
+.kw-filter.active, .kw-filter:hover { background: var(--plum); border-color: var(--plum); color: var(--white); }
 .kw-filter:not(.active) { background: transparent; border-color: var(--rose-light); color: var(--muted); }
 .kw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .kw-card {
   background: var(--white); border-radius: 10px; padding: 22px 20px;
   border-left: 4px solid var(--rose);
-  box-shadow: 0 2px 12px rgba(59,31,43,0.06);
-  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 2px 12px rgba(59,31,43,0.06); transition: transform 0.25s, box-shadow 0.25s;
 }
 .kw-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(59,31,43,0.1); }
 .kw-card.high { border-left-color: #E53935; }
@@ -317,111 +325,56 @@ tr:hover td { background: rgba(255,255,255,0.04); color: var(--white); }
 .kw-row span:first-child { color: var(--muted); }
 .kw-row span:last-child { font-weight: 600; color: var(--text-dark); }
 .kw-intent {
-  display: inline-block; margin-top: 10px;
-  font-size: 10px; padding: 3px 10px; border-radius: 100px;
+  display: inline-block; margin-top: 10px; font-size: 10px; padding: 3px 10px; border-radius: 100px;
   background: rgba(59,31,43,0.08); color: var(--plum); font-weight: 600; letter-spacing: 0.5px;
 }
 
-/* ── TOOLS (the big new section) ────────────────── */
+/* TOOLS */
 .tools-section { background: var(--plum); }
 .tools-section .section-title { color: var(--white); }
 .tools-section .section-desc { color: rgba(255,255,255,0.55); }
-.tools-intro {
-  margin: 20px 0 60px;
-  background: rgba(201,150,58,0.12);
-  border: 1px solid rgba(201,150,58,0.3);
-  border-radius: 12px; padding: 28px 32px;
-}
+.tools-intro { margin: 20px 0 60px; background: rgba(201,150,58,0.12); border: 1px solid rgba(201,150,58,0.3); border-radius: 12px; padding: 28px 32px; }
 .tools-intro p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.8; }
 .tools-intro strong { color: var(--gold); }
-.tools-pillars {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 24px; margin-bottom: 60px;
-}
+.tools-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px; }
 .pillar-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 14px; padding: 32px 28px;
-  transition: all 0.3s;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; padding: 32px 28px; transition: all 0.3s;
 }
-.pillar-card:hover {
-  background: rgba(255,255,255,0.09);
-  border-color: rgba(201,150,58,0.4);
-  transform: translateY(-4px);
-}
-.pillar-icon {
-  width: 52px; height: 52px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px; margin-bottom: 20px;
-}
+.pillar-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(201,150,58,0.4); transform: translateY(-4px); }
+.pillar-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
 .pillar-card h3 { font-size: 16px; color: var(--white); font-weight: 600; margin-bottom: 10px; }
 .pillar-card .pillar-sub { font-size: 12px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; font-weight: 600; }
 .pillar-card p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.75; margin-bottom: 18px; }
 .tool-list { display: flex; flex-direction: column; gap: 8px; }
-.tool-item {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 12.5px; color: rgba(255,255,255,0.7);
-}
-.tool-item .tool-dot {
-  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
-}
+.tool-item { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: rgba(255,255,255,0.7); }
+.tool-item .tool-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
 .tool-item strong { color: var(--white); }
-
-/* tools detail table */
-.tools-detail-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px; color: var(--white); margin-bottom: 30px;
-}
-.tools-detail-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.tool-detail-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; padding: 28px 24px;
-}
-.tool-detail-card .td-head {
-  display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
-}
-.tool-detail-card .td-icon {
-  font-size: 22px; width: 44px; height: 44px;
-  background: rgba(201,150,58,0.15); border-radius: 10px;
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
+.tools-detail-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); margin-bottom: 30px; }
+.tools-detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.tool-detail-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.tool-detail-card .td-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.tool-detail-card .td-icon { font-size: 22px; width: 44px; height: 44px; background: rgba(201,150,58,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .tool-detail-card .td-name { font-size: 15px; color: var(--white); font-weight: 600; }
 .tool-detail-card .td-type { font-size: 11px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
 .tool-detail-card p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.75; margin-bottom: 14px; }
 .tool-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tool-tag {
-  font-size: 10px; padding: 3px 10px; border-radius: 100px;
-  background: rgba(162,103,105,0.2); color: var(--rose-light);
-  font-weight: 500; border: 1px solid rgba(162,103,105,0.3);
-}
+.tool-tag { font-size: 10px; padding: 3px 10px; border-radius: 100px; background: rgba(162,103,105,0.2); color: var(--rose-light); font-weight: 500; border: 1px solid rgba(162,103,105,0.3); }
 
-/* ── CONTENT GAPS ─────────────────────────────── */
+/* CONTENT GAPS */
 .gaps { background: var(--blush-light); }
 .gaps-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
-.gaps-col h3 {
-  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
-  font-weight: 700; padding: 12px 20px; border-radius: 8px;
-  margin-bottom: 20px;
-}
+.gaps-col h3 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; }
 .gaps-col.red h3 { background: rgba(229,57,53,0.1); color: #C62828; }
 .gaps-col.green h3 { background: rgba(46,125,50,0.1); color: var(--green); }
-.gap-item {
-  background: var(--white); border-radius: 10px; padding: 20px 22px;
-  margin-bottom: 14px; box-shadow: 0 2px 10px rgba(59,31,43,0.05);
-  border-left: 3px solid;
-  transition: transform 0.25s;
-}
+.gap-item { background: var(--white); border-radius: 10px; padding: 20px 22px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(59,31,43,0.05); border-left: 3px solid; transition: transform 0.25s; }
 .gap-item:hover { transform: translateX(4px); }
 .gaps-col.red .gap-item { border-left-color: #E53935; }
 .gaps-col.green .gap-item { border-left-color: var(--green); }
 .gap-item h4 { font-size: 14px; color: var(--plum); font-weight: 600; margin-bottom: 6px; }
 .gap-item p { font-size: 12.5px; color: var(--muted); line-height: 1.65; }
 
-/* ── ROADMAP ──────────────────────────────────── */
+/* ROADMAP */
 .roadmap { background: var(--white); }
 .roadmap-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
 .phase-card { border-radius: 14px; overflow: hidden; }
@@ -430,111 +383,64 @@ tr:hover td { background: rgba(255,255,255,0.04); color: var(--white); }
 .phase-head .phase-months { font-size: 13px; opacity: 0.7; margin-bottom: 14px; }
 .phase-head h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); font-weight: 700; line-height: 1.3; }
 .phase-body { background: var(--blush-light); padding: 24px; }
-.phase-task {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 10px 0; border-bottom: 1px solid rgba(59,31,43,0.07);
-  font-size: 13px; color: var(--text-dark); line-height: 1.5;
-}
+.phase-task { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(59,31,43,0.07); font-size: 13px; color: var(--text-dark); line-height: 1.5; }
 .phase-task:last-child { border-bottom: none; }
-.phase-task::before {
-  content: attr(data-week);
-  font-size: 9px; padding: 2px 7px; border-radius: 100px;
-  background: var(--plum); color: var(--white);
-  white-space: nowrap; flex-shrink: 0; font-weight: 600;
-  margin-top: 2px; letter-spacing: 0.5px;
-}
+.phase-task::before { content: attr(data-week); font-size: 9px; padding: 2px 7px; border-radius: 100px; background: var(--plum); color: var(--white); white-space: nowrap; flex-shrink: 0; font-weight: 600; margin-top: 2px; letter-spacing: 0.5px; }
 
-/* ── KPIS ─────────────────────────────────────── */
+/* KPIS */
 .kpis { background: var(--plum-dark); }
 .kpis .section-title { color: var(--white); }
 .kpis .section-desc { color: rgba(255,255,255,0.5); }
 .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
-.kpi-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; padding: 28px 24px;
-}
+.kpi-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
 .kpi-card .kpi-icon { font-size: 28px; margin-bottom: 14px; }
 .kpi-card h3 { font-size: 14px; color: var(--white); font-weight: 600; margin-bottom: 16px; }
 .kpi-milestones { display: flex; flex-direction: column; gap: 10px; }
 .milestone-row { display: flex; align-items: center; gap: 12px; }
-.milestone-dot {
-  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-}
+.milestone-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .milestone-text { font-size: 12px; color: rgba(255,255,255,0.6); flex: 1; }
 .milestone-val { font-size: 13px; color: var(--white); font-weight: 600; }
 
-/* ── NEXT STEPS ───────────────────────────────── */
+/* NEXT STEPS */
 .nextsteps { background: var(--blush-light); }
 .timeline { margin-top: 60px; position: relative; }
-.timeline::before {
-  content: ''; position: absolute; left: 110px; top: 0; bottom: 0; width: 2px;
-  background: linear-gradient(to bottom, var(--gold), var(--rose), transparent);
-}
-.tl-item {
-  display: flex; gap: 40px; margin-bottom: 32px; align-items: flex-start;
-  animation: fadeIn 0.6s ease both;
-}
-@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-.tl-time {
-  width: 110px; flex-shrink: 0; text-align: right;
-  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
-  font-weight: 700; padding-top: 18px; color: var(--gold);
-  font-family: 'DM Mono', monospace;
-}
-.tl-dot-wrap {
-  flex-shrink: 0; width: 40px; display: flex; justify-content: center; padding-top: 16px;
-}
-.tl-dot {
-  width: 14px; height: 14px; border-radius: 50%;
-  background: var(--gold); border: 3px solid var(--blush-light);
-  box-shadow: 0 0 0 3px var(--gold);
-}
-.tl-card {
-  flex: 1; background: var(--white); border-radius: 10px;
-  padding: 20px 24px; box-shadow: 0 2px 12px rgba(59,31,43,0.07);
-}
+.timeline::before { content: ''; position: absolute; left: 110px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--rose), transparent); }
+.tl-item { display: flex; gap: 40px; margin-bottom: 32px; align-items: flex-start; animation: fadeIn 0.6s ease both; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+.tl-time { width: 110px; flex-shrink: 0; text-align: right; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; padding-top: 18px; color: var(--gold); font-family: 'DM Mono', monospace; }
+.tl-dot-wrap { flex-shrink: 0; width: 40px; display: flex; justify-content: center; padding-top: 16px; }
+.tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--gold); border: 3px solid var(--blush-light); box-shadow: 0 0 0 3px var(--gold); }
+.tl-card { flex: 1; background: var(--white); border-radius: 10px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(59,31,43,0.07); }
 .tl-card h4 { font-size: 15px; color: var(--plum); font-weight: 600; margin-bottom: 6px; }
 .tl-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
 
-/* ── FOOTER ───────────────────────────────────── */
-footer {
-  background: var(--plum-dark);
-  padding: 60px;
-  border-top: 1px solid rgba(201,150,58,0.2);
-}
-.footer-inner {
-  max-width: 1300px; margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 24px;
-}
-.footer-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px; color: var(--white);
-}
+/* FOOTER */
+footer { background: var(--plum-dark); padding: 60px; border-top: 1px solid rgba(201,150,58,0.2); }
+.footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); }
 .footer-logo span { color: var(--gold); }
 .footer-links { display: flex; gap: 28px; }
 .footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; }
 .footer-links a:hover { color: var(--gold); }
-.footer-note { font-size: 11px; color: rgba(255,255,255,0.25); text-align: right; line-height: 1.6; }
 
-/* ── RESPONSIVE ───────────────────────────────── */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-grid, .audit-grid, .tools-pillars, .tools-detail-grid,
-  .gaps-layout, .roadmap-phases, .kpi-grid, .swot-grid { grid-template-columns: 1fr; }
+  .gaps-layout, .roadmap-phases, .kpi-grid, .swot-grid,
+  .comp-cards, .moves-grid, .win-steps { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .kw-grid { grid-template-columns: 1fr 1fr; }
   .overview-grid { grid-template-columns: repeat(3, 1fr); }
+  .vivace-spotlight { grid-template-columns: 1fr; }
+  .vs-header { grid-column: 1; }
+  .win-path { grid-column: 1; }
   nav { padding: 0 20px; }
   section { padding: 70px 24px; }
   .timeline::before { left: 80px; }
 }
 
-/* ── SCROLL REVEAL ────────────────────────────── */
-.reveal {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
+/* SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 </style>
 </head>
@@ -557,7 +463,7 @@ footer {
 <section class="hero" id="home">
   <div class="hero-grid">
     <div class="hero-left">
-      <div class="hero-tag"><span>Nairobi Aesthetic Market · 2025</span></div>
+      <div class="hero-tag"><span>Nairobi Aesthetic Market · 2026</span></div>
       <h1>SEO to <em>Top 3</em><br>in 4–6 Months</h1>
       <p class="hero-sub">A full-spectrum digital strategy for Vivace Clinic — covering technical SEO, competitor gaps, keyword dominance and the complete toolstack needed to outrank every aesthetic clinic in Nairobi.</p>
       <div class="hero-cta-row">
@@ -587,8 +493,8 @@ footer {
         <div class="context">Beyond just keywords</div>
       </div>
       <div class="stat-card wide">
-        <div class="num" style="font-size:28px; color: var(--rose-light);">vivace.co.ke · Parklands  · Nairobi, Kenya</div>
-        <div class="label" style="margin-top:8px;">Dermatology & Aesthetic Clinic </div>
+        <div class="num" style="font-size:28px; color: var(--rose-light);">vivace.co.ke · Nairobi, Kenya</div>
+        <div class="label" style="margin-top:8px;">Dermatology & Aesthetic Clinic</div>
       </div>
     </div>
   </div>
@@ -597,31 +503,11 @@ footer {
 <!-- OVERVIEW STRIP -->
 <div class="overview">
   <div class="overview-grid">
-    <div class="overview-item">
-      <div class="ico">🔧</div>
-      <strong>Technical SEO</strong>
-      <p>Speed, crawl, schema, Core Web Vitals</p>
-    </div>
-    <div class="overview-item">
-      <div class="ico">🏆</div>
-      <strong>Competitor Analysis</strong>
-      <p>Top 5 rivals, DA gaps & SWOT</p>
-    </div>
-    <div class="overview-item">
-      <div class="ico">🔑</div>
-      <strong>Keyword Strategy</strong>
-      <p>11 transactional terms mapped to pages</p>
-    </div>
-    <div class="overview-item">
-      <div class="ico">🛠️</div>
-      <strong>Full Toolstack</strong>
-      <p>GSC, Ahrefs, GBP, GA4 + more</p>
-    </div>
-    <div class="overview-item">
-      <div class="ico">📊</div>
-      <strong>KPI Framework</strong>
-      <p>Monthly milestones & reporting</p>
-    </div>
+    <div class="overview-item"><div class="ico">🔧</div><strong>Technical SEO</strong><p>Speed, crawl, schema, Core Web Vitals</p></div>
+    <div class="overview-item"><div class="ico">🏆</div><strong>Competitor Analysis</strong><p>Top 6 rivals, DA gaps & SWOT</p></div>
+    <div class="overview-item"><div class="ico">🔑</div><strong>Keyword Strategy</strong><p>11 transactional terms mapped to pages</p></div>
+    <div class="overview-item"><div class="ico">🛠️</div><strong>Full Toolstack</strong><p>GSC, Ahrefs, GBP, GA4 + more</p></div>
+    <div class="overview-item"><div class="ico">📊</div><strong>KPI Framework</strong><p>Monthly milestones & reporting</p></div>
   </div>
 </div>
 
@@ -631,13 +517,9 @@ footer {
     <span class="section-tag">01 — Technical Audit</span>
     <h2 class="section-title">Website Technical <em>Analysis</em></h2>
     <p class="section-desc">A deep inspection of vivace.co.ke reveals 4 critical areas. Fixing these in Month 1 is the single highest-leverage action for ranking gains.</p>
-
     <div class="audit-grid reveal">
       <div class="audit-card">
-        <div class="audit-head" style="background:#C0392B;">
-          <h3>⚡ Page Speed & Core Web Vitals</h3>
-          <span class="badge warn">⚠ Fix First</span>
-        </div>
+        <div class="audit-head" style="background:#C0392B;"><h3>⚡ Page Speed & Core Web Vitals</h3><span class="badge warn">⚠ Fix First</span></div>
         <div class="audit-body">
           <p>Images are lazy-loaded via JavaScript, causing Largest Contentful Paint (LCP) to exceed 3 seconds on mobile — a direct ranking penalty. No defer/async on render-blocking scripts detected. Google's Page Experience update makes this a hard ranking factor.</p>
           <div class="audit-actions">
@@ -649,12 +531,8 @@ footer {
           </div>
         </div>
       </div>
-
       <div class="audit-card">
-        <div class="audit-head" style="background:#2E7D32;">
-          <h3>📱 Mobile & UX</h3>
-          <span class="badge ok">✓ Responsive</span>
-        </div>
+        <div class="audit-head" style="background:#2E7D32;"><h3>📱 Mobile & UX</h3><span class="badge ok">✓ Responsive</span></div>
         <div class="audit-body">
           <p>The site uses a responsive WordPress theme and the floating WhatsApp + Book Now CTAs are mobile-appropriate. However, tap targets should be verified ≥48px across all devices, and no horizontal scroll should occur on sub-pages.</p>
           <div class="audit-actions">
@@ -665,12 +543,8 @@ footer {
           </div>
         </div>
       </div>
-
       <div class="audit-card">
-        <div class="audit-head" style="background:#E07B39;">
-          <h3>📝 On-Page SEO & Meta</h3>
-          <span class="badge warn">⚠ Critical Gap</span>
-        </div>
+        <div class="audit-head" style="background:#E07B39;"><h3>📝 On-Page SEO & Meta</h3><span class="badge warn">⚠ Critical Gap</span></div>
         <div class="audit-body">
           <p>Branded service page names (V-Lase, V-Shape, V-Glow, V-Derma) are the single biggest SEO mistake on the site. Google cannot map these to user queries like "laser hair removal Nairobi." Meta descriptions are absent on several pages. No structured data markup detected site-wide.</p>
           <div class="audit-actions">
@@ -682,14 +556,10 @@ footer {
           </div>
         </div>
       </div>
-
       <div class="audit-card">
-        <div class="audit-head" style="background:#1A6FA5;">
-          <h3>🔍 Crawlability & Indexation</h3>
-          <span class="badge warn">⚠ Verify</span>
-        </div>
+        <div class="audit-head" style="background:#1A6FA5;"><h3>🔍 Crawlability & Indexation</h3><span class="badge warn">⚠ Verify</span></div>
         <div class="audit-body">
-          <p>As a WordPress site, Vivace likely has an auto-generated sitemap but it needs manual verification and submission to Google Search Console. The robots.txt must be checked for unintentional page blocks. Canonical tags are critical to avoid duplicate content from tag/category pages.</p>
+          <p>As a WordPress site, Vivace likely has an auto-generated sitemap but it needs manual verification and submission to Google Search Console. The robots.txt must be checked for unintentional page blocks. Canonical tags are critical to avoid duplicate content.</p>
           <div class="audit-actions">
             <div class="action-item">Set up and verify Google Search Console — submit XML sitemap immediately</div>
             <div class="action-item">Inspect robots.txt: ensure all service pages are crawlable</div>
@@ -703,106 +573,297 @@ footer {
   </div>
 </section>
 
-<!-- COMPETITORS -->
+<!-- COMPETITORS — FULLY REBUILT -->
 <section class="competitors" id="competitors">
   <div class="section-inner">
     <span class="section-tag" style="color:var(--rose-light);">02 — Competitor Intelligence</span>
     <h2 class="section-title">The Competitive <em>Landscape</em></h2>
-    <p class="section-desc">Vivace is competing against a mix of hospital-backed clinics and boutique aesthetics studios. Here's where the real gaps are — and where Vivace wins.</p>
+    <p class="section-desc">Vivace is competing against 6 established Nairobi clinics — from hospital-backed giants to boutique studios. Here's exactly where each rival stands, what they do well, and precisely where Vivace can overtake them.</p>
 
-    <div class="comp-table-wrap reveal">
-      <table>
-        <thead>
-          <tr>
-            <th>Competitor</th>
-            <th>Est. DA</th>
-            <th>Top Keywords</th>
-            <th>Content Strength</th>
-            <th>Vivace Edge</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong style="color:white;">Aga Khan / Major Hospitals</strong></td>
-            <td><div class="da-bar"><div class="da-track"><div class="da-fill" style="width:80%;background:#E53935;"></div></div><span>55–70</span></div></td>
-            <td>laser hair removal, skin clinic Nairobi</td>
-            <td>High — long-form medical content</td>
-            <td class="edge-badge">✓ Boutique speed &amp; booking</td>
-          </tr>
-          <tr>
-            <td><strong style="color:white;">Skin360 Clinic</strong></td>
-            <td><div class="da-bar"><div class="da-track"><div class="da-fill" style="width:45%;background:var(--amber);"></div></div><span>28–35</span></div></td>
-            <td>microneedling Nairobi, botox</td>
-            <td>Medium — service pages only</td>
-            <td class="edge-badge">✓ Women wellness niche</td>
-          </tr>
-          <tr>
-            <td><strong style="color:white;">Crystal Aesthetics</strong></td>
-            <td><div class="da-bar"><div class="da-track"><div class="da-fill" style="width:38%;background:var(--amber);"></div></div><span>22–30</span></div></td>
-            <td>body contouring, fillers Nairobi</td>
-            <td>Medium — social-driven</td>
-            <td class="edge-badge">✓ 4.9★ reviews, 2 locations</td>
-          </tr>
-          <tr>
-            <td><strong style="color:white;">Eve &amp; Boys / Hair Clinics</strong></td>
-            <td><div class="da-bar"><div class="da-track"><div class="da-fill" style="width:30%;background:#4CAF50;"></div></div><span>20–28</span></div></td>
-            <td>hair removal, waxing Nairobi</td>
-            <td>Low — thin pages</td>
-            <td class="edge-badge">✓ Full body + face combo</td>
-          </tr>
-          <tr>
-            <td><strong style="color:white;">Radiant Skin Clinic KE</strong></td>
-            <td><div class="da-bar"><div class="da-track"><div class="da-fill" style="width:22%;background:#4CAF50;"></div></div><span>18–25</span></div></td>
-            <td>weight loss Nairobi, skin boosters</td>
-            <td>Low — no active blog</td>
-            <td class="edge-badge">✓ Blog + content strategy</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Vivace Spotlight -->
+    <div class="vivace-spotlight reveal">
+      <div class="vs-header">
+        <h3>⭐ Vivace Clinic — Your Position Today</h3>
+        <p>Boutique dermatology & aesthetics clinic with two premium Nairobi locations. Exceptional reputation but SEO visibility significantly below its actual market quality. The gap between real-world standing and search rankings is Vivace's biggest opportunity.</p>
+      </div>
+      <div class="vs-stat-col">
+        <div class="vs-stat"><div class="vs-val">4.9★</div><div class="vs-label">Google Rating (139 reviews)</div></div>
+        <div class="vs-stat"><div class="vs-val">2</div><div class="vs-label">Premium Locations (Parklands + Riverside)</div></div>
+      </div>
+      <div class="vs-stat-col">
+        <div class="vs-stat"><div class="vs-val">~18</div><div class="vs-label">Estimated Domain Authority</div></div>
+        <div class="vs-stat"><div class="vs-val">0</div><div class="vs-label">Blog Posts Published (critical gap)</div></div>
+      </div>
+      <div class="vs-stat-col">
+        <div class="vs-stat"><div class="vs-val">Dr-led</div><div class="vs-label">Medical-grade treatments</div></div>
+        <div class="vs-stat"><div class="vs-val">Top 6</div><div class="vs-label">Achievable map pack rank in 60 days</div></div>
+      </div>
+
+      <div class="win-path">
+        <h4>🚀 The 4-Step Path to #1 in Nairobi</h4>
+        <div class="win-steps">
+          <div class="win-step">
+            <div class="ws-num">Step 01</div>
+            <p>Rename page titles & H1s to keyword-rich names — fastest ranking lever, zero content needed</p>
+          </div>
+          <div class="win-step">
+            <div class="ws-num">Step 02</div>
+            <p>Fully optimise Google Business Profile — enter the Map Pack within 60 days using existing 4.9★ rating</p>
+          </div>
+          <div class="win-step">
+            <div class="ws-num">Step 03</div>
+            <p>Publish 2 blog posts/month targeting informational queries no Nairobi competitor has answered</p>
+          </div>
+          <div class="win-step">
+            <div class="ws-num">Step 04</div>
+            <p>Build 25+ backlinks via local citations, Nairobi health blogs & HARO to surpass competitor DA</p>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Competitor Cards -->
+    <h3 class="comp-cards-title">The 6 Rivals — Deep Analysis</h3>
+    <div class="comp-cards reveal">
+
+      <!-- Avané -->
+      <div class="comp-card">
+        <div class="comp-card-head">
+          <div class="comp-name">🏆 Avané Clinic</div>
+          <div class="comp-location">Yaya Centre · Gigiri · Parklands</div>
+          <div class="comp-da-row">
+            <span class="comp-da-label">DA</span>
+            <div class="comp-da-track"><div class="comp-da-fill" style="width:72%;background:#E53935;"></div></div>
+            <span class="comp-da-val">42–52</span>
+          </div>
+        </div>
+        <div class="comp-card-body">
+          <p class="comp-desc">Premium medspa led by Dr. Pranav Pancholi — one of Nairobi's most recognised dermatologists. Claims to be the first laser skin centre in Nairobi. High-end technology with UltraClear Laser, SofWave, and SPLENDOR-X machines. Strongest competitor overall.</p>
+          <div class="comp-services">
+            <span class="comp-service-tag">Laser Hair Removal</span><span class="comp-service-tag">HydraFacial</span><span class="comp-service-tag">Botox & Fillers</span><span class="comp-service-tag">Stem Cell Therapy</span><span class="comp-service-tag">SofWave Lifting</span><span class="comp-service-tag">Endolift</span>
+          </div>
+          <div class="comp-sw">
+            <div class="comp-sw-col s"><h5>Strengths</h5><ul><li>Highest DA & backlink profile</li><li>3 premium locations</li><li>Strong brand recognition</li><li>Advanced tech (UltraClear)</li></ul></div>
+            <div class="comp-sw-col w"><h5>Weaknesses</h5><ul><li>Premium pricing alienates mid-market</li><li>Slow blog update cadence</li><li>Less focus on women's wellness</li><li>No MonaLisa Touch niche</li></ul></div>
+          </div>
+          <div class="comp-edge-row"><span class="comp-edge-label">Vivace Edge →</span><span class="comp-edge-val">Women's wellness niche + boutique intimacy</span></div>
+        </div>
+      </div>
+
+      <!-- Allure -->
+      <div class="comp-card">
+        <div class="comp-card-head">
+          <div class="comp-name">🏥 Allure Laser & Aesthetic Centre</div>
+          <div class="comp-location">The Hub Karen · Mombasa</div>
+          <div class="comp-da-row">
+            <span class="comp-da-label">DA</span>
+            <div class="comp-da-track"><div class="comp-da-fill" style="width:55%;background:#E07B39;"></div></div>
+            <span class="comp-da-val">30–40</span>
+          </div>
+        </div>
+        <div class="comp-card-body">
+          <p class="comp-desc">One of Kenya's most established aesthetic clinics with a multi-city presence. Covers both medical dermatology and cosmetic treatments — a broad portfolio that appeals to a wide audience. Their Karen location is particularly strong in the affluent south Nairobi market.</p>
+          <div class="comp-services">
+            <span class="comp-service-tag">Laser Hair Removal</span><span class="comp-service-tag">Botox</span><span class="comp-service-tag">Microneedling</span><span class="comp-service-tag">Acne Treatment</span><span class="comp-service-tag">Skin Rejuvenation</span><span class="comp-service-tag">Body Contouring</span>
+          </div>
+          <div class="comp-sw">
+            <div class="comp-sw-col s"><h5>Strengths</h5><ul><li>Multi-city presence (Nairobi + Mombasa)</li><li>Strong Karen brand recognition</li><li>Medical & cosmetic combo</li><li>Established review base</li></ul></div>
+            <div class="comp-sw-col w"><h5>Weaknesses</h5><ul><li>Less active on social media</li><li>No women's wellness speciality</li><li>Karen location only in Nairobi</li><li>Blog content thin and infrequent</li></ul></div>
+          </div>
+          <div class="comp-edge-row"><span class="comp-edge-label">Vivace Edge →</span><span class="comp-edge-val">Two central Nairobi locations vs Karen only</span></div>
+        </div>
+      </div>
+
+      <!-- Dr. Stasch -->
+      <div class="comp-card">
+        <div class="comp-card-head">
+          <div class="comp-name">💉 Dr. Stasch MediSpa</div>
+          <div class="comp-location">Riverside Drive, Nairobi</div>
+          <div class="comp-da-row">
+            <span class="comp-da-label">DA</span>
+            <div class="comp-da-track"><div class="comp-da-fill" style="width:40%;background:#E07B39;"></div></div>
+            <span class="comp-da-val">25–35</span>
+          </div>
+        </div>
+        <div class="comp-card-body">
+          <p class="comp-desc">Exclusive medical spa on Riverside Drive offering a curated luxury experience. Alma Soprano laser, IV vitamin drips, HydraFacial, and skin rejuvenation. Rated 4.9/5 with internationally trained staff. Accepts medical insurance — a unique differentiator. Overlaps with Vivace's Riverside location directly.</p>
+          <div class="comp-services">
+            <span class="comp-service-tag">Laser Hair Removal</span><span class="comp-service-tag">HydraFacial</span><span class="comp-service-tag">IV Vitamin Drips</span><span class="comp-service-tag">Botox & Fillers</span><span class="comp-service-tag">Skin Toning</span><span class="comp-service-tag">Insurance Accepted</span>
+          </div>
+          <div class="comp-sw">
+            <div class="comp-sw-col s"><h5>Strengths</h5><ul><li>Same star rating (4.9★)</li><li>Insurance acceptance</li><li>Luxury brand positioning</li><li>Same Riverside catchment</li></ul></div>
+            <div class="comp-sw-col w"><h5>Weaknesses</h5><ul><li>Single location only</li><li>No women's wellness services</li><li>No body contouring weight loss</li><li>SEO blog entirely absent</li></ul></div>
+          </div>
+          <div class="comp-edge-row"><span class="comp-edge-label">Vivace Edge →</span><span class="comp-edge-val">Full treatment breadth + 2 locations vs 1</span></div>
+        </div>
+      </div>
+
+      <!-- Cosmed Plus -->
+      <div class="comp-card">
+        <div class="comp-card-head">
+          <div class="comp-name">🌿 Cosmed Plus Clinic</div>
+          <div class="comp-location">Thika Road, Nairobi</div>
+          <div class="comp-da-row">
+            <span class="comp-da-label">DA</span>
+            <div class="comp-da-track"><div class="comp-da-fill" style="width:30%;background:#4CAF50;"></div></div>
+            <span class="comp-da-val">20–28</span>
+          </div>
+        </div>
+        <div class="comp-card-body">
+          <p class="comp-desc">Board-certified dermatologist-led (Dr. Caroline Mwatha) clinic focused on medical and cosmetic dermatology. Strong clinical credibility with 450+ laser procedures completed in 2024 alone. Serves the underserved Thika Road corridor — a growing residential market.</p>
+          <div class="comp-services">
+            <span class="comp-service-tag">Laser Rejuvenation</span><span class="comp-service-tag">Botox</span><span class="comp-service-tag">PRP</span><span class="comp-service-tag">Chemical Peels</span><span class="comp-service-tag">Microneedling</span><span class="comp-service-tag">Dermatosurgery</span>
+          </div>
+          <div class="comp-sw">
+            <div class="comp-sw-col s"><h5>Strengths</h5><ul><li>Board-certified leadership</li><li>High volume (450+ procedures/yr)</li><li>Underserved geographic niche</li><li>Strong clinical credibility</li></ul></div>
+            <div class="comp-sw-col w"><h5>Weaknesses</h5><ul><li>Low DA — weak link profile</li><li>Single outer Nairobi location</li><li>No women's wellness niche</li><li>Minimal social media presence</li></ul></div>
+          </div>
+          <div class="comp-edge-row"><span class="comp-edge-label">Vivace Edge →</span><span class="comp-edge-val">Central locations + superior digital presence</span></div>
+        </div>
+      </div>
+
+      <!-- Este Medical -->
+      <div class="comp-card">
+        <div class="comp-card-head">
+          <div class="comp-name">🌍 Este Medical Group Kenya</div>
+          <div class="comp-location">Nairobi (International Chain)</div>
+          <div class="comp-da-row">
+            <span class="comp-da-label">DA</span>
+            <div class="comp-da-track"><div class="comp-da-fill" style="width:65%;background:#E53935;"></div></div>
+            <span class="comp-da-val">38–48</span>
+          </div>
+        </div>
+        <div class="comp-card-body">
+          <p class="comp-desc">International award-winning brand bringing global skin and hair restoration expertise to Kenya. Their DA is inflated by the global parent domain. Highly credible in hair restoration specifically. Their international brand cache is both a strength and a weakness — they feel less local.</p>
+          <div class="comp-services">
+            <span class="comp-service-tag">Hair Restoration</span><span class="comp-service-tag">Skin Treatments</span><span class="comp-service-tag">Laser Therapy</span><span class="comp-service-tag">Anti-Ageing</span><span class="comp-service-tag">Body Treatments</span>
+          </div>
+          <div class="comp-sw">
+            <div class="comp-sw-col s"><h5>Strengths</h5><ul><li>Global brand authority</li><li>High inherited domain DA</li><li>International accreditation</li><li>Strong hair restoration niche</li></ul></div>
+            <div class="comp-sw-col w"><h5>Weaknesses</h5><ul><li>Feels impersonal/non-local</li><li>No MonaLisa/women's wellness</li><li>Less relevant Kenya-specific content</li><li>GBP reviews weaker locally</li></ul></div>
+          </div>
+          <div class="comp-edge-row"><span class="comp-edge-label">Vivace Edge →</span><span class="comp-edge-val">Local authenticity + 4.9★ Nairobi reviews</span></div>
+        </div>
+      </div>
+
+      <!-- Thrive Aesthetics -->
+      <div class="comp-card">
+        <div class="comp-card-head">
+          <div class="comp-name">✨ Thrive Aesthetics</div>
+          <div class="comp-location">Nairobi</div>
+          <div class="comp-da-row">
+            <span class="comp-da-label">DA</span>
+            <div class="comp-da-track"><div class="comp-da-fill" style="width:22%;background:#4CAF50;"></div></div>
+            <span class="comp-da-val">14–22</span>
+          </div>
+        </div>
+        <div class="comp-card-body">
+          <p class="comp-desc">Certified holistic skincare clinic with a niche in permanent makeup and scalp micropigmentation alongside standard aesthetic treatments. More accessible price point attracts a broader demographic. Social-media-first strategy — strong Instagram presence but weak website SEO.</p>
+          <div class="comp-services">
+            <span class="comp-service-tag">Laser Hair Removal</span><span class="comp-service-tag">Permanent Makeup</span><span class="comp-service-tag">Scalp Micropigmentation</span><span class="comp-service-tag">Chemical Peels</span><span class="comp-service-tag">High-Freq Facials</span>
+          </div>
+          <div class="comp-sw">
+            <div class="comp-sw-col s"><h5>Strengths</h5><ul><li>Unique permanent makeup niche</li><li>Strong Instagram following</li><li>Accessible price positioning</li><li>Growing loyal client base</li></ul></div>
+            <div class="comp-sw-col w"><h5>Weaknesses</h5><ul><li>Lowest DA in competitive set</li><li>No dermatologist on staff</li><li>No medical/clinical credibility</li><li>Zero blog/SEO content</li></ul></div>
+          </div>
+          <div class="comp-edge-row"><span class="comp-edge-label">Vivace Edge →</span><span class="comp-edge-val">Medical credibility + full treatment range</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Vivace SWOT -->
+    <h3 class="comp-cards-title" style="margin-top:0;">Vivace's Full SWOT — vs the Field</h3>
     <div class="swot-grid reveal">
       <div class="swot-card" style="background:rgba(46,125,50,0.12); border:1px solid rgba(46,125,50,0.3);">
         <h4 style="color:#4CAF50;">Strengths</h4>
         <ul style="color:rgba(255,255,255,0.7);">
-          <li>4.9★ rating with 139 verified reviews</li>
-          <li>Two premium Nairobi locations</li>
-          <li>Medical-grade laser technology</li>
+          <li>4.9★ rating with 139 verified reviews — best in class</li>
+          <li>Two premium central Nairobi locations</li>
+          <li>Medical-grade laser technology on site</li>
+          <li>Unique MonaLisa Touch / women's wellness niche</li>
+          <li>Doctor-led treatments build medical trust</li>
           <li>Strong WhatsApp booking funnel</li>
-          <li>Specialist doctor-led treatments</li>
         </ul>
       </div>
       <div class="swot-card" style="background:rgba(229,57,53,0.1); border:1px solid rgba(229,57,53,0.3);">
         <h4 style="color:#EF5350;">Weaknesses</h4>
         <ul style="color:rgba(255,255,255,0.7);">
-          <li>Branded page names hide keywords</li>
-          <li>No consistent blog presence</li>
-          <li>Missing schema markup entirely</li>
-          <li>No standalone weight loss page</li>
-          <li>Meta descriptions absent on many pages</li>
+          <li>Branded page names hide all keywords from Google</li>
+          <li>Zero blog content — missing informational traffic</li>
+          <li>No schema markup anywhere on site</li>
+          <li>No standalone weight loss landing page</li>
+          <li>Meta descriptions absent on multiple pages</li>
+          <li>DA (~18) significantly below top rivals</li>
         </ul>
       </div>
       <div class="swot-card" style="background:rgba(26,111,165,0.12); border:1px solid rgba(26,111,165,0.3);">
         <h4 style="color:#42A5F5;">Opportunities</h4>
         <ul style="color:rgba(255,255,255,0.7);">
-          <li>Most competitors have DA below 35</li>
-          <li>Informational blog content untapped</li>
-          <li>Local map pack positions available</li>
-          <li>Vaginal rejuvenation — niche, low KD</li>
-          <li>Long-tail queries nearly uncontested</li>
+          <li>4 of 6 competitors have DA below 35 — beatable</li>
+          <li>Informational blog content entirely untapped in niche</li>
+          <li>Local map pack Top 3 positions still open</li>
+          <li>MonaLisa Touch / vaginal rejuvenation — low KD niche</li>
+          <li>Weight loss clinic search cluster nearly uncontested</li>
+          <li>Long-tail queries: dark skin laser, PCOS treatment NBI</li>
         </ul>
       </div>
       <div class="swot-card" style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.3);">
         <h4 style="color:var(--amber);">Threats</h4>
         <ul style="color:rgba(255,255,255,0.7);">
-          <li>Hospital SEO budgets &amp; authority</li>
-          <li>High PPC cost-per-click in aesthetics</li>
-          <li>New clinic entries post-2024</li>
-          <li>Google algorithm volatility</li>
-          <li>Social-first competitors (TikTok SEO)</li>
+          <li>Avané & Este Medical have significantly higher DA</li>
+          <li>Avané's 3-location network dominates map pack radius</li>
+          <li>High PPC cost-per-click in Nairobi aesthetics</li>
+          <li>New clinic entries post-2024 (low barrier to open)</li>
+          <li>TikTok SEO creating new social-search competitors</li>
+          <li>Google algorithm volatility in YMYL/medical content</li>
         </ul>
       </div>
     </div>
+
+    <!-- Winning Moves -->
+    <div class="winning-moves reveal">
+      <h3>Vivace's Winning Moves — Specific to These Competitors</h3>
+      <div class="moves-grid">
+        <div class="move-card priority-1">
+          <div class="move-num">Move 01 · vs Avané</div>
+          <h4>Own the Women's Wellness Category</h4>
+          <p>Avané doesn't offer MonaLisa Touch or vaginal rejuvenation. Vivace is the only clinic in Nairobi offering this treatment with laser. A dedicated optimised page + blog content on menopause & vaginal health can capture an entire uncontested search category.</p>
+          <span class="move-impact high">🔑 High Impact</span>
+        </div>
+        <div class="move-card priority-1">
+          <div class="move-num">Move 02 · vs Allure & Dr. Stasch</div>
+          <h4>Dominate the Parklands & Riverside Map Pack</h4>
+          <p>Allure is in Karen; Dr. Stasch is on Riverside. Vivace has both Parklands AND Riverside. With two fully optimised GBP profiles targeting both corridors, Vivace can appear twice in local map results — doubling visibility competitors cannot replicate.</p>
+          <span class="move-impact high">🔑 High Impact</span>
+        </div>
+        <div class="move-card priority-2">
+          <div class="move-num">Move 03 · vs Este Medical</div>
+          <h4>Outrank on Local Content Authenticity</h4>
+          <p>Este Medical's content is globally generic. Vivace can dominate by publishing Kenya-specific content: "Laser hair removal for dark African skin," "PCOS chin hair treatment in Nairobi," "best skin booster for humid Nairobi climate." Google rewards geographic relevance.</p>
+          <span class="move-impact medium">📈 Medium Impact</span>
+        </div>
+        <div class="move-card priority-2">
+          <div class="move-num">Move 04 · vs Cosmed Plus</div>
+          <h4>Create a Weight Loss Clinic Landing Page</h4>
+          <p>Cosmed Plus has no weight loss page. Vivace already offers non-invasive weight loss programs. A dedicated /weight-loss-clinic-nairobi/ page with 800+ words, FAQ schema, and a GBP service entry can rank in this high-volume cluster within 6–8 weeks.</p>
+          <span class="move-impact medium">📈 Medium Impact</span>
+        </div>
+        <div class="move-card priority-3">
+          <div class="move-num">Move 05 · vs Thrive Aesthetics</div>
+          <h4>Win the Informational Blog Race Early</h4>
+          <p>Thrive has zero blog content. Publishing just 2 posts per month means Vivace builds an insurmountable blog advantage by Month 6. Each post becomes a permanent traffic asset linking to service pages, compounding authority Thrive can never quickly replicate.</p>
+          <span class="move-impact quick">⚡ Quick Win</span>
+        </div>
+        <div class="move-card priority-3">
+          <div class="move-num">Move 06 · vs All Competitors</div>
+          <h4>Schema Markup First-Mover Advantage</h4>
+          <p>None of Vivace's 6 competitors have FAQ or MedicalBusiness schema implemented. Adding schema to all 11 service pages this month makes Vivace the only Nairobi aesthetics clinic with rich results in Google — expanded listings that take 2–3× more screen real estate than competitors.</p>
+          <span class="move-impact quick">⚡ Quick Win</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -812,140 +873,37 @@ footer {
     <span class="section-tag">03 — Keyword Research</span>
     <h2 class="section-title">11 Keywords That <em>Drive Bookings</em></h2>
     <p class="section-desc">Every keyword is mapped to a specific page, prioritised by commercial intent and achievable difficulty within the 4–6 month window.</p>
-
     <div class="kw-filters">
       <div class="kw-filter active">All (11)</div>
       <div class="kw-filter">🔴 High Priority</div>
       <div class="kw-filter">🟠 Medium</div>
       <div class="kw-filter">🟢 Quick Win</div>
     </div>
-
     <div class="kw-grid reveal">
-      <div class="kw-card high">
-        <h3>Laser Hair Removal Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>1,200–2,000</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Medium-High</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/v-lase/ → rename</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card high">
-        <h3>Botox Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>600–1,000</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Medium-High</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/v-glow/ → rename</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card high">
-        <h3>Fillers Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>400–700</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Medium</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/v-glow/ → rename</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card high">
-        <h3>Microneedling Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>400–800</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Low-Medium</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/microneedling/ (create)</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card high">
-        <h3>Body Contouring Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>200–400</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Low</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/v-shape/ → rename</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card high">
-        <h3>Weight Loss Clinic Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>500–900</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Medium</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/weight-loss/ (create)</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card high">
-        <h3>Vaginal Rejuvenation Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>300–600</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Low-Medium</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/monalisa-touch/ → rename</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card medium">
-        <h3>Facial Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>600–1,000</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Medium</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/v-glow/ → rename</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:var(--amber);">🟠 Medium</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card medium">
-        <h3>Weight Management Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>200–400</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Low</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/weight-loss/ (shared)</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:var(--amber);">🟠 Medium</span></div>
-        </div>
-        <span class="kw-intent">Commercial</span>
-      </div>
-      <div class="kw-card quickwin">
-        <h3>Skin Boosters Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>150–300</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Low</span></div>
-          <div class="kw-row"><span>Target Page</span><span>/skin-boosters/ (create)</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:var(--green);">🟢 Quick Win</span></div>
-        </div>
-        <span class="kw-intent">Transactional</span>
-      </div>
-      <div class="kw-card high">
-        <h3>Aesthetic Clinic Nairobi</h3>
-        <div class="kw-meta">
-          <div class="kw-row"><span>Monthly Volume</span><span>800–1,400</span></div>
-          <div class="kw-row"><span>Keyword Difficulty</span><span>Medium-High</span></div>
-          <div class="kw-row"><span>Target Page</span><span>Homepage</span></div>
-          <div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div>
-        </div>
-        <span class="kw-intent">Commercial</span>
-      </div>
+      <div class="kw-card high"><h3>Laser Hair Removal Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>1,200–2,000</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Medium-High</span></div><div class="kw-row"><span>Target Page</span><span>/v-lase/ → rename</span></div><div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card high"><h3>Botox Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>600–1,000</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Medium-High</span></div><div class="kw-row"><span>Target Page</span><span>/v-glow/ → rename</span></div><div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card high"><h3>Fillers Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>400–700</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Medium</span></div><div class="kw-row"><span>Target Page</span><span>/v-glow/ → rename</span></div><div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card high"><h3>Microneedling Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>400–800</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Low-Medium</span></div><div class="kw-row"><span>Target Page</span><span>/microneedling/ (create)</span></div><div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card high"><h3>Body Contouring Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>200–400</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Low</span></div><div class="kw-row"><span>Target Page</span><span>/v-shape/ → rename</span></div><div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card high"><h3>Weight Loss Clinic Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>500–900</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Medium</span></div><div class="kw-row"><span>Target Page</span><span>/weight-loss/ (create)</span></div><div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card high"><h3>Vaginal Rejuvenation Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>300–600</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Low-Medium</span></div><div class="kw-row"><span>Target Page</span><span>/monalisa-touch/ → rename</span></div><div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card medium"><h3>Facial Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>600–1,000</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Medium</span></div><div class="kw-row"><span>Target Page</span><span>/v-glow/ → rename</span></div><div class="kw-row"><span>Priority</span><span style="color:var(--amber);">🟠 Medium</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card medium"><h3>Weight Management Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>200–400</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Low</span></div><div class="kw-row"><span>Target Page</span><span>/weight-loss/ (shared)</span></div><div class="kw-row"><span>Priority</span><span style="color:var(--amber);">🟠 Medium</span></div></div><span class="kw-intent">Commercial</span></div>
+      <div class="kw-card quickwin"><h3>Skin Boosters Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>150–300</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Low</span></div><div class="kw-row"><span>Target Page</span><span>/skin-boosters/ (create)</span></div><div class="kw-row"><span>Priority</span><span style="color:var(--green);">🟢 Quick Win</span></div></div><span class="kw-intent">Transactional</span></div>
+      <div class="kw-card high"><h3>Aesthetic Clinic Nairobi</h3><div class="kw-meta"><div class="kw-row"><span>Monthly Volume</span><span>800–1,400</span></div><div class="kw-row"><span>Keyword Difficulty</span><span>Medium-High</span></div><div class="kw-row"><span>Target Page</span><span>Homepage</span></div><div class="kw-row"><span>Priority</span><span style="color:#E53935;">🔴 High</span></div></div><span class="kw-intent">Commercial</span></div>
     </div>
   </div>
 </section>
 
-<!-- ALL TOOLS SECTION — the key differentiator -->
+<!-- TOOLS -->
 <section class="tools-section" id="tools">
   <div class="section-inner">
     <span class="section-tag" style="color:var(--gold-light);">04 — Beyond Keywords</span>
     <h2 class="section-title">The Full SEO <em>Toolstack</em></h2>
     <p class="section-desc">Keywords alone don't rank websites. Top-3 positions require mastery across 6 distinct pillars — each with its own tools, tactics, and measurement approach.</p>
-
     <div class="tools-intro reveal">
       <p>Most clinics optimise for keywords and stop. The ones who reach <strong>Top 3 and stay there</strong> win because they operate a complete system: technical hygiene, authority signals, local dominance, content depth, conversion alignment, and data-driven iteration. This is that system for Vivace.</p>
     </div>
-
     <div class="tools-pillars reveal">
       <div class="pillar-card">
         <div class="pillar-icon" style="background:rgba(201,150,58,0.2);">🔧</div>
@@ -960,7 +918,6 @@ footer {
           <div class="tool-item"><span class="tool-dot" style="background:#42A5F5;"></span><span><strong>RankMath SEO (WP plugin)</strong> — on-page scoring, schema builder, sitemap management</span></div>
         </div>
       </div>
-
       <div class="pillar-card">
         <div class="pillar-icon" style="background:rgba(162,103,105,0.2);">🔑</div>
         <div class="pillar-sub">Pillar 2</div>
@@ -974,7 +931,6 @@ footer {
           <div class="tool-item"><span class="tool-dot" style="background:#FFCA28;"></span><span><strong>Also Asked / People Also Ask</strong> — FAQ content mining for schema opportunities</span></div>
         </div>
       </div>
-
       <div class="pillar-card">
         <div class="pillar-icon" style="background:rgba(26,111,165,0.2);">📍</div>
         <div class="pillar-sub">Pillar 3</div>
@@ -988,7 +944,6 @@ footer {
           <div class="tool-item"><span class="tool-dot" style="background:#66BB6A;"></span><span><strong>Yext / Moz Local</strong> — ensures NAP consistency across 50+ directories automatically</span></div>
         </div>
       </div>
-
       <div class="pillar-card">
         <div class="pillar-icon" style="background:rgba(46,125,50,0.2);">✍️</div>
         <div class="pillar-sub">Pillar 4</div>
@@ -1002,7 +957,6 @@ footer {
           <div class="tool-item"><span class="tool-dot" style="background:#AB47BC;"></span><span><strong>Hunter.io</strong> — find editorial contacts at Nairobi health &amp; lifestyle blogs for outreach</span></div>
         </div>
       </div>
-
       <div class="pillar-card">
         <div class="pillar-icon" style="background:rgba(224,123,57,0.2);">📊</div>
         <div class="pillar-sub">Pillar 5</div>
@@ -1016,7 +970,6 @@ footer {
           <div class="tool-item"><span class="tool-dot" style="background:#FFCA28;"></span><span><strong>A/B testing (via WP Elementor)</strong> — test CTA variants: "Book Now" vs "Get Free Consultation"</span></div>
         </div>
       </div>
-
       <div class="pillar-card">
         <div class="pillar-icon" style="background:rgba(162,103,105,0.15);">🔗</div>
         <div class="pillar-sub">Pillar 6</div>
@@ -1032,63 +985,27 @@ footer {
       </div>
     </div>
 
-    <!-- Specific tool detail cards -->
     <h3 class="tools-detail-title">Priority Tools — Deep Dive</h3>
     <div class="tools-detail-grid reveal">
       <div class="tool-detail-card">
-        <div class="td-head">
-          <div class="td-icon">📍</div>
-          <div><div class="td-name">Google Business Profile Optimisation</div><div class="td-type">Local SEO · Free · Highest ROI</div></div>
-        </div>
+        <div class="td-head"><div class="td-icon">📍</div><div><div class="td-name">Google Business Profile Optimisation</div><div class="td-type">Local SEO · Free · Highest ROI</div></div></div>
         <p>The GBP profile is the single most impactful tool for local queries. Vivace currently has a 4.9★ rating — a massive asset. But rankings in the Map Pack are determined by <strong>relevance, distance, and prominence</strong>. Actions: add all 11 services with descriptions, upload 20+ treatment photos, write weekly GBP posts with keywords, populate the Q&A section, and respond to every review within 24 hours. This alone can move Vivace into the Top 3 map pack within 60 days.</p>
-        <div class="tool-tags">
-          <span class="tool-tag">Map Pack Rankings</span>
-          <span class="tool-tag">Review Management</span>
-          <span class="tool-tag">Local Authority</span>
-          <span class="tool-tag">Free Tool</span>
-        </div>
+        <div class="tool-tags"><span class="tool-tag">Map Pack Rankings</span><span class="tool-tag">Review Management</span><span class="tool-tag">Local Authority</span><span class="tool-tag">Free Tool</span></div>
       </div>
-
       <div class="tool-detail-card">
-        <div class="td-head">
-          <div class="td-icon">🕷️</div>
-          <div><div class="td-name">Screaming Frog SEO Spider</div><div class="td-type">Technical Audit · £199/yr</div></div>
-        </div>
+        <div class="td-head"><div class="td-icon">🕷️</div><div><div class="td-name">Screaming Frog SEO Spider</div><div class="td-type">Technical Audit · £199/yr</div></div></div>
         <p>Screaming Frog crawls every URL on vivace.co.ke and exports a full audit of title tag lengths, duplicate meta descriptions, missing H1s, broken links, redirect chains, and page depth. Run this immediately before any content changes so you have a baseline. It will surface the on-page issues that are invisibly suppressing rankings. Filter by "Missing Meta Description" and "Duplicate Title" — these are the fastest wins.</p>
-        <div class="tool-tags">
-          <span class="tool-tag">Technical Audit</span>
-          <span class="tool-tag">Broken Links</span>
-          <span class="tool-tag">On-Page Issues</span>
-          <span class="tool-tag">Redirect Chains</span>
-        </div>
+        <div class="tool-tags"><span class="tool-tag">Technical Audit</span><span class="tool-tag">Broken Links</span><span class="tool-tag">On-Page Issues</span><span class="tool-tag">Redirect Chains</span></div>
       </div>
-
       <div class="tool-detail-card">
-        <div class="td-head">
-          <div class="td-icon">📈</div>
-          <div><div class="td-name">SEMrush Position Tracking</div><div class="td-type">Rank Tracking · $129/mo</div></div>
-        </div>
+        <div class="td-head"><div class="td-icon">📈</div><div><div class="td-name">SEMrush Position Tracking</div><div class="td-type">Rank Tracking · $129/mo</div></div></div>
         <p>Set up a SEMrush project for vivace.co.ke targeting Kenya/Nairobi. Track all 11 keywords weekly. The Position Tracking dashboard shows ranking movements, estimated traffic, and when competitors overtake you. Set up automatic alerts for any keyword that drops more than 3 positions. The Keyword Gap tool reveals which competitor keywords Vivace is missing entirely — these become your next content targets.</p>
-        <div class="tool-tags">
-          <span class="tool-tag">Weekly Rank Tracking</span>
-          <span class="tool-tag">Competitor Gaps</span>
-          <span class="tool-tag">Traffic Estimates</span>
-          <span class="tool-tag">Keyword Alerts</span>
-        </div>
+        <div class="tool-tags"><span class="tool-tag">Weekly Rank Tracking</span><span class="tool-tag">Competitor Gaps</span><span class="tool-tag">Traffic Estimates</span><span class="tool-tag">Keyword Alerts</span></div>
       </div>
-
       <div class="tool-detail-card">
-        <div class="td-head">
-          <div class="td-icon">🔥</div>
-          <div><div class="td-name">Hotjar Heatmaps & Recordings</div><div class="td-type">Conversion Optimisation · Free tier available</div></div>
-        </div>
+        <div class="td-head"><div class="td-icon">🔥</div><div><div class="td-name">Hotjar Heatmaps & Recordings</div><div class="td-type">Conversion Optimisation · Free tier available</div></div></div>
         <p>Ranking #1 means nothing if visitors don't book. Hotjar shows exactly where users click, scroll, and drop off on the laser hair removal and botox pages. If 70% of visitors never see the "Book Now" CTA, move it higher. Session recordings reveal confusion points — a user bouncing from the pricing section means they need a consultation CTA, not a hard price. This data drives conversion rate improvements that compound your SEO investment.</p>
-        <div class="tool-tags">
-          <span class="tool-tag">Heatmaps</span>
-          <span class="tool-tag">Session Recording</span>
-          <span class="tool-tag">Conversion Rate</span>
-          <span class="tool-tag">UX Insights</span>
-        </div>
+        <div class="tool-tags"><span class="tool-tag">Heatmaps</span><span class="tool-tag">Session Recording</span><span class="tool-tag">Conversion Rate</span><span class="tool-tag">UX Insights</span></div>
       </div>
     </div>
   </div>
@@ -1100,54 +1017,22 @@ footer {
     <span class="section-tag">05 — Gap Analysis</span>
     <h2 class="section-title">Content & Ranking <em>Gaps</em></h2>
     <p class="section-desc">What competitors have that Vivace doesn't — and the exact opportunities to close those gaps faster than they can react.</p>
-
     <div class="gaps-layout reveal">
       <div class="gaps-col red">
         <h3>❌ Critical Gaps</h3>
-        <div class="gap-item">
-          <h4>Branded Page Names Blocking Rankings</h4>
-          <p>V-Lase, V-Shape, V-Glow, V-Derma are invisible to Google's keyword matching. These must be renamed in titles, H1s, and meta — but URLs can stay to preserve any existing link equity.</p>
-        </div>
-        <div class="gap-item">
-          <h4>No Weight Loss or Weight Management Page</h4>
-          <p>"Weight loss clinic Nairobi" gets 500–900 monthly searches. There is no dedicated landing page for this keyword cluster. Competitors with even basic pages will rank above Vivace.</p>
-        </div>
-        <div class="gap-item">
-          <h4>No Standalone Microneedling or Skin Boosters Page</h4>
-          <p>Both are growing search terms in Nairobi's market. Without dedicated pages, the treatment can't rank — it's buried under generic category pages.</p>
-        </div>
-        <div class="gap-item">
-          <h4>Zero Blog Content</h4>
-          <p>Informational queries ("how many laser sessions for dark skin," "botox aftercare Nairobi") funnel high-intent visitors. No blog means Vivace captures zero of this traffic. Competitors with even 5 blog posts have a significant advantage.</p>
-        </div>
-        <div class="gap-item">
-          <h4>No FAQ or Schema Markup</h4>
-          <p>FAQ schema can trigger rich results in Google — expanded listings that take up 2–3× the screen real estate. Currently zero schema is detected across the entire site.</p>
-        </div>
+        <div class="gap-item"><h4>Branded Page Names Blocking Rankings</h4><p>V-Lase, V-Shape, V-Glow, V-Derma are invisible to Google's keyword matching. These must be renamed in titles, H1s, and meta — but URLs can stay to preserve any existing link equity.</p></div>
+        <div class="gap-item"><h4>No Weight Loss or Weight Management Page</h4><p>"Weight loss clinic Nairobi" gets 500–900 monthly searches. There is no dedicated landing page for this keyword cluster. Competitors with even basic pages will rank above Vivace.</p></div>
+        <div class="gap-item"><h4>No Standalone Microneedling or Skin Boosters Page</h4><p>Both are growing search terms in Nairobi's market. Without dedicated pages, the treatment can't rank — it's buried under generic category pages.</p></div>
+        <div class="gap-item"><h4>Zero Blog Content</h4><p>Informational queries ("how many laser sessions for dark skin," "botox aftercare Nairobi") funnel high-intent visitors. No blog means Vivace captures zero of this traffic. Competitors with even 5 blog posts have a significant advantage.</p></div>
+        <div class="gap-item"><h4>No FAQ or Schema Markup</h4><p>FAQ schema can trigger rich results in Google — expanded listings that take up 2–3× the screen real estate. Currently zero schema is detected across the entire site.</p></div>
       </div>
-
       <div class="gaps-col green">
         <h3>✓ Quick Wins &amp; Opportunities</h3>
-        <div class="gap-item">
-          <h4>Rename Page Titles & H1s (Week 1 — highest ROI)</h4>
-          <p>Zero content work required. Simply updating title tags and H1s with target keywords can move existing pages from page 4 to page 1 within 4–8 weeks. This is the fastest ranking lever on the entire site.</p>
-        </div>
-        <div class="gap-item">
-          <h4>Create 3 Missing Service Pages (Month 1)</h4>
-          <p>Weight Loss, Microneedling, and Skin Boosters pages. Each needs 600+ words of optimised content, an FAQ section, a booking CTA, and LocalBusiness schema. These can rank within 60 days.</p>
-        </div>
-        <div class="gap-item">
-          <h4>GBP Optimisation — Map Pack Entry (Weeks 1–3)</h4>
-          <p>Vivace's 4.9★ rating gives it a strong head start. Adding all 11 services with keyword-rich descriptions, weekly GBP posts, and 20+ new treatment photos can push it into the local Top 3 faster than organic results.</p>
-        </div>
-        <div class="gap-item">
-          <h4>FAQ Schema on All Service Pages (Month 1)</h4>
-          <p>Using RankMath's FAQ block, adding 4–6 questions per service page takes 30 minutes per page and can generate rich results within 2–4 weeks of implementation.</p>
-        </div>
-        <div class="gap-item">
-          <h4>Review Generation Campaign (Ongoing)</h4>
-          <p>Send post-appointment WhatsApp message with a direct GBP review link. Reaching 200+ reviews with a maintained 4.9★ rating is a strong local ranking signal no competitor can fake or catch quickly.</p>
-        </div>
+        <div class="gap-item"><h4>Rename Page Titles & H1s (Week 1 — highest ROI)</h4><p>Zero content work required. Simply updating title tags and H1s with target keywords can move existing pages from page 4 to page 1 within 4–8 weeks. This is the fastest ranking lever on the entire site.</p></div>
+        <div class="gap-item"><h4>Create 3 Missing Service Pages (Month 1)</h4><p>Weight Loss, Microneedling, and Skin Boosters pages. Each needs 600+ words of optimised content, an FAQ section, a booking CTA, and LocalBusiness schema. These can rank within 60 days.</p></div>
+        <div class="gap-item"><h4>GBP Optimisation — Map Pack Entry (Weeks 1–3)</h4><p>Vivace's 4.9★ rating gives it a strong head start. Adding all 11 services with keyword-rich descriptions, weekly GBP posts, and 20+ new treatment photos can push it into the local Top 3 faster than organic results.</p></div>
+        <div class="gap-item"><h4>FAQ Schema on All Service Pages (Month 1)</h4><p>Using RankMath's FAQ block, adding 4–6 questions per service page takes 30 minutes per page and can generate rich results within 2–4 weeks of implementation.</p></div>
+        <div class="gap-item"><h4>Review Generation Campaign (Ongoing)</h4><p>Send post-appointment WhatsApp message with a direct GBP review link. Reaching 200+ reviews with a maintained 4.9★ rating is a strong local ranking signal no competitor can fake or catch quickly.</p></div>
       </div>
     </div>
   </div>
@@ -1159,14 +1044,9 @@ footer {
     <span class="section-tag">06 — Execution Plan</span>
     <h2 class="section-title">The 4–6 Month <em>Roadmap</em></h2>
     <p class="section-desc">A phased, prioritised plan where every action builds on the last. No month is wasted — each phase has clear deliverables and measurable outcomes.</p>
-
     <div class="roadmap-phases reveal">
       <div class="phase-card">
-        <div class="phase-head" style="background:var(--plum);">
-          <div class="phase-label">Phase 1</div>
-          <div class="phase-months">Months 1–2</div>
-          <h3>Technical Foundation & On-Page Wins</h3>
-        </div>
+        <div class="phase-head" style="background:var(--plum);"><div class="phase-label">Phase 1</div><div class="phase-months">Months 1–2</div><h3>Technical Foundation & On-Page Wins</h3></div>
         <div class="phase-body">
           <div class="phase-task" data-week="Wk 1">Set up Google Search Console; submit XML sitemap; fix 404s</div>
           <div class="phase-task" data-week="Wk 1">Rename all page titles &amp; H1s with target keywords</div>
@@ -1180,13 +1060,8 @@ footer {
           <div class="phase-task" data-week="Mo 2">Run PageSpeed Insights; compress images to WebP; enable caching</div>
         </div>
       </div>
-
       <div class="phase-card">
-        <div class="phase-head" style="background:var(--dusty-rose, #A26769);">
-          <div class="phase-label">Phase 2</div>
-          <div class="phase-months">Months 3–4</div>
-          <h3>Authority Building & Local Domination</h3>
-        </div>
+        <div class="phase-head" style="background:var(--rose);"><div class="phase-label">Phase 2</div><div class="phase-months">Months 3–4</div><h3>Authority Building & Local Domination</h3></div>
         <div class="phase-body">
           <div class="phase-task" data-week="Mo 3">Build 15–20 local citations (Hotfrog, Yellow Pages KE, Yelp KE)</div>
           <div class="phase-task" data-week="Mo 3">Outreach to 5+ Nairobi health &amp; lifestyle blogs for backlinks</div>
@@ -1200,13 +1075,8 @@ footer {
           <div class="phase-task" data-week="Mo 4">Implement Google Tag Manager for booking conversion tracking</div>
         </div>
       </div>
-
       <div class="phase-card">
-        <div class="phase-head" style="background:var(--gold);">
-          <div class="phase-label">Phase 3</div>
-          <div class="phase-months">Months 5–6</div>
-          <h3>Rankings Push & Conversion Optimisation</h3>
-        </div>
+        <div class="phase-head" style="background:var(--gold);"><div class="phase-label">Phase 3</div><div class="phase-months">Months 5–6</div><h3>Rankings Push & Conversion Optimisation</h3></div>
         <div class="phase-body">
           <div class="phase-task" data-week="Mo 5">Target featured snippets with FAQ + How-to content</div>
           <div class="phase-task" data-week="Mo 5">Publish comparison content: "Laser vs Waxing Nairobi"</div>
@@ -1230,169 +1100,13 @@ footer {
     <span class="section-tag" style="color:var(--rose-light);">07 — Measurement</span>
     <h2 class="section-title">KPIs & <em>Success Framework</em></h2>
     <p class="section-desc">Every SEO investment needs measurable milestones. Here's exactly how success is defined — and when to expect it.</p>
-
     <div class="kpi-grid reveal">
-      <div class="kpi-card">
-        <div class="kpi-icon">🎯</div>
-        <h3>Keyword Rankings</h3>
-        <div class="kpi-milestones">
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--rose);"></div>
-            <div class="milestone-text">Month 2 target</div>
-            <div class="milestone-val">Top 10 for 6 keywords</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--gold);"></div>
-            <div class="milestone-text">Month 4 target</div>
-            <div class="milestone-val">Top 5 for 8 keywords</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:#4CAF50;"></div>
-            <div class="milestone-text">Month 6 goal</div>
-            <div class="milestone-val">Top 3 for 7+ keywords</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div>
-            <div class="milestone-text">Tracking tool</div>
-            <div class="milestone-val" style="color:rgba(255,255,255,0.5);">SEMrush weekly</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="kpi-card">
-        <div class="kpi-icon">📈</div>
-        <h3>Organic Traffic</h3>
-        <div class="kpi-milestones">
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--rose);"></div>
-            <div class="milestone-text">Month 2 target</div>
-            <div class="milestone-val">+20% vs baseline</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--gold);"></div>
-            <div class="milestone-text">Month 4 target</div>
-            <div class="milestone-val">+75% vs baseline</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:#4CAF50;"></div>
-            <div class="milestone-text">Month 6 goal</div>
-            <div class="milestone-val">+150% vs baseline</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div>
-            <div class="milestone-text">Tracking tool</div>
-            <div class="milestone-val" style="color:rgba(255,255,255,0.5);">GA4 + GSC</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="kpi-card">
-        <div class="kpi-icon">📍</div>
-        <h3>Local Map Pack</h3>
-        <div class="kpi-milestones">
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--rose);"></div>
-            <div class="milestone-text">Month 2 target</div>
-            <div class="milestone-val">GBP fully optimised</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--gold);"></div>
-            <div class="milestone-text">Month 4 target</div>
-            <div class="milestone-val">Top 10 in map pack</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:#4CAF50;"></div>
-            <div class="milestone-text">Month 6 goal</div>
-            <div class="milestone-val">Top 3 Map Pack</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div>
-            <div class="milestone-text">Tracking tool</div>
-            <div class="milestone-val" style="color:rgba(255,255,255,0.5);">BrightLocal</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="kpi-card">
-        <div class="kpi-icon">🔗</div>
-        <h3>Backlink Growth</h3>
-        <div class="kpi-milestones">
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--rose);"></div>
-            <div class="milestone-text">Month 2 target</div>
-            <div class="milestone-val">5 quality backlinks</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--gold);"></div>
-            <div class="milestone-text">Month 4 target</div>
-            <div class="milestone-val">15 quality backlinks</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:#4CAF50;"></div>
-            <div class="milestone-text">Month 6 goal</div>
-            <div class="milestone-val">25+ quality links</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div>
-            <div class="milestone-text">Tracking tool</div>
-            <div class="milestone-val" style="color:rgba(255,255,255,0.5);">Ahrefs backlink monitor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="kpi-card">
-        <div class="kpi-icon">⭐</div>
-        <h3>Reviews & Reputation</h3>
-        <div class="kpi-milestones">
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--rose);"></div>
-            <div class="milestone-text">Month 2 target</div>
-            <div class="milestone-val">160+ reviews (4.9★)</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--gold);"></div>
-            <div class="milestone-text">Month 4 target</div>
-            <div class="milestone-val">190+ reviews</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:#4CAF50;"></div>
-            <div class="milestone-text">Month 6 goal</div>
-            <div class="milestone-val">220+ reviews, 4.9★</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div>
-            <div class="milestone-text">Tracking tool</div>
-            <div class="milestone-val" style="color:rgba(255,255,255,0.5);">GBP + BrightLocal</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="kpi-card">
-        <div class="kpi-icon">📅</div>
-        <h3>Bookings from Organic</h3>
-        <div class="kpi-milestones">
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--rose);"></div>
-            <div class="milestone-text">Month 2 target</div>
-            <div class="milestone-val">Baseline established</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:var(--gold);"></div>
-            <div class="milestone-text">Month 4 target</div>
-            <div class="milestone-val">+20% organic bookings</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:#4CAF50;"></div>
-            <div class="milestone-text">Month 6 goal</div>
-            <div class="milestone-val">+40% organic bookings</div>
-          </div>
-          <div class="milestone-row">
-            <div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div>
-            <div class="milestone-text">Tracking tool</div>
-            <div class="milestone-val" style="color:rgba(255,255,255,0.5);">GA4 + GTM goals</div>
-          </div>
-        </div>
-      </div>
+      <div class="kpi-card"><div class="kpi-icon">🎯</div><h3>Keyword Rankings</h3><div class="kpi-milestones"><div class="milestone-row"><div class="milestone-dot" style="background:var(--rose);"></div><div class="milestone-text">Month 2 target</div><div class="milestone-val">Top 10 for 6 keywords</div></div><div class="milestone-row"><div class="milestone-dot" style="background:var(--gold);"></div><div class="milestone-text">Month 4 target</div><div class="milestone-val">Top 5 for 8 keywords</div></div><div class="milestone-row"><div class="milestone-dot" style="background:#4CAF50;"></div><div class="milestone-text">Month 6 goal</div><div class="milestone-val">Top 3 for 7+ keywords</div></div><div class="milestone-row"><div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div><div class="milestone-text">Tracking tool</div><div class="milestone-val" style="color:rgba(255,255,255,0.5);">SEMrush weekly</div></div></div></div>
+      <div class="kpi-card"><div class="kpi-icon">📈</div><h3>Organic Traffic</h3><div class="kpi-milestones"><div class="milestone-row"><div class="milestone-dot" style="background:var(--rose);"></div><div class="milestone-text">Month 2 target</div><div class="milestone-val">+20% vs baseline</div></div><div class="milestone-row"><div class="milestone-dot" style="background:var(--gold);"></div><div class="milestone-text">Month 4 target</div><div class="milestone-val">+75% vs baseline</div></div><div class="milestone-row"><div class="milestone-dot" style="background:#4CAF50;"></div><div class="milestone-text">Month 6 goal</div><div class="milestone-val">+150% vs baseline</div></div><div class="milestone-row"><div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div><div class="milestone-text">Tracking tool</div><div class="milestone-val" style="color:rgba(255,255,255,0.5);">GA4 + GSC</div></div></div></div>
+      <div class="kpi-card"><div class="kpi-icon">📍</div><h3>Local Map Pack</h3><div class="kpi-milestones"><div class="milestone-row"><div class="milestone-dot" style="background:var(--rose);"></div><div class="milestone-text">Month 2 target</div><div class="milestone-val">GBP fully optimised</div></div><div class="milestone-row"><div class="milestone-dot" style="background:var(--gold);"></div><div class="milestone-text">Month 4 target</div><div class="milestone-val">Top 10 in map pack</div></div><div class="milestone-row"><div class="milestone-dot" style="background:#4CAF50;"></div><div class="milestone-text">Month 6 goal</div><div class="milestone-val">Top 3 Map Pack</div></div><div class="milestone-row"><div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div><div class="milestone-text">Tracking tool</div><div class="milestone-val" style="color:rgba(255,255,255,0.5);">BrightLocal</div></div></div></div>
+      <div class="kpi-card"><div class="kpi-icon">🔗</div><h3>Backlink Growth</h3><div class="kpi-milestones"><div class="milestone-row"><div class="milestone-dot" style="background:var(--rose);"></div><div class="milestone-text">Month 2 target</div><div class="milestone-val">5 quality backlinks</div></div><div class="milestone-row"><div class="milestone-dot" style="background:var(--gold);"></div><div class="milestone-text">Month 4 target</div><div class="milestone-val">15 quality backlinks</div></div><div class="milestone-row"><div class="milestone-dot" style="background:#4CAF50;"></div><div class="milestone-text">Month 6 goal</div><div class="milestone-val">25+ quality links</div></div><div class="milestone-row"><div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div><div class="milestone-text">Tracking tool</div><div class="milestone-val" style="color:rgba(255,255,255,0.5);">Ahrefs backlink monitor</div></div></div></div>
+      <div class="kpi-card"><div class="kpi-icon">⭐</div><h3>Reviews & Reputation</h3><div class="kpi-milestones"><div class="milestone-row"><div class="milestone-dot" style="background:var(--rose);"></div><div class="milestone-text">Month 2 target</div><div class="milestone-val">160+ reviews (4.9★)</div></div><div class="milestone-row"><div class="milestone-dot" style="background:var(--gold);"></div><div class="milestone-text">Month 4 target</div><div class="milestone-val">190+ reviews</div></div><div class="milestone-row"><div class="milestone-dot" style="background:#4CAF50;"></div><div class="milestone-text">Month 6 goal</div><div class="milestone-val">220+ reviews, 4.9★</div></div><div class="milestone-row"><div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div><div class="milestone-text">Tracking tool</div><div class="milestone-val" style="color:rgba(255,255,255,0.5);">GBP + BrightLocal</div></div></div></div>
+      <div class="kpi-card"><div class="kpi-icon">📅</div><h3>Bookings from Organic</h3><div class="kpi-milestones"><div class="milestone-row"><div class="milestone-dot" style="background:var(--rose);"></div><div class="milestone-text">Month 2 target</div><div class="milestone-val">Baseline established</div></div><div class="milestone-row"><div class="milestone-dot" style="background:var(--gold);"></div><div class="milestone-text">Month 4 target</div><div class="milestone-val">+20% organic bookings</div></div><div class="milestone-row"><div class="milestone-dot" style="background:#4CAF50;"></div><div class="milestone-text">Month 6 goal</div><div class="milestone-val">+40% organic bookings</div></div><div class="milestone-row"><div class="milestone-dot" style="background:rgba(255,255,255,0.3);"></div><div class="milestone-text">Tracking tool</div><div class="milestone-val" style="color:rgba(255,255,255,0.5);">GA4 + GTM goals</div></div></div></div>
     </div>
   </div>
 </section>
@@ -1403,63 +1117,41 @@ footer {
     <span class="section-tag">08 — Start Now</span>
     <h2 class="section-title">Immediate <em>Next Steps</em></h2>
     <p class="section-desc">Ranked by impact. Every week of delay is a week a competitor could act first. The first two weeks are the most important.</p>
-
     <div class="timeline reveal">
       <div class="tl-item">
         <div class="tl-time">Week 1</div>
         <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--gold);box-shadow:0 0 0 3px rgba(201,150,58,0.3);"></div></div>
-        <div class="tl-card">
-          <h4>Set up Google Search Console + Submit Sitemap</h4>
-          <p>Verify vivace.co.ke in GSC, submit the XML sitemap, and check for crawl errors immediately. This is free and gives you baseline data for everything else. Without GSC data, you're flying blind.</p>
-        </div>
+        <div class="tl-card"><h4>Set up Google Search Console + Submit Sitemap</h4><p>Verify vivace.co.ke in GSC, submit the XML sitemap, and check for crawl errors immediately. This is free and gives you baseline data for everything else. Without GSC data, you're flying blind.</p></div>
       </div>
       <div class="tl-item">
         <div class="tl-time">Week 1</div>
         <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--gold);box-shadow:0 0 0 3px rgba(201,150,58,0.3);"></div></div>
-        <div class="tl-card">
-          <h4>Rename All Service Page Titles & H1s</h4>
-          <p>The single highest-ROI action: rename "V-Lase" → "Laser Hair Removal Nairobi," "V-Glow" → "Botox & Facial Treatments Nairobi," etc. This can move pages from page 5 to page 1 within 4–6 weeks with zero content creation required.</p>
-        </div>
+        <div class="tl-card"><h4>Rename All Service Page Titles & H1s</h4><p>The single highest-ROI action: rename "V-Lase" → "Laser Hair Removal Nairobi," "V-Glow" → "Botox & Facial Treatments Nairobi," etc. This can move pages from page 5 to page 1 within 4–6 weeks with zero content creation required.</p></div>
       </div>
       <div class="tl-item">
         <div class="tl-time">Week 1</div>
         <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--gold);box-shadow:0 0 0 3px rgba(201,150,58,0.3);"></div></div>
-        <div class="tl-card">
-          <h4>Fully Optimise Google Business Profile</h4>
-          <p>Add all 11 services with keyword-rich descriptions. Upload 20+ treatment photos. Write a 750-character GBP description with primary keywords. Enable messaging. Populate the Q&A section with 5 common questions. This directly affects Map Pack rankings.</p>
-        </div>
+        <div class="tl-card"><h4>Fully Optimise Google Business Profile</h4><p>Add all 11 services with keyword-rich descriptions. Upload 20+ treatment photos. Write a 750-character GBP description with primary keywords. Enable messaging. Populate the Q&A section with 5 common questions. This directly affects Map Pack rankings.</p></div>
       </div>
       <div class="tl-item">
         <div class="tl-time">Week 2</div>
         <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--rose);box-shadow:0 0 0 3px rgba(162,103,105,0.3);"></div></div>
-        <div class="tl-card">
-          <h4>Create 3 Missing Service Pages</h4>
-          <p>Build /weight-loss/, /microneedling/, and /skin-boosters/ pages. Each needs 600+ words, a keyword-optimised H1, FAQ section, patient-facing copy, treatment benefits, and a prominent "Book Now" CTA with WhatsApp link.</p>
-        </div>
+        <div class="tl-card"><h4>Create 3 Missing Service Pages</h4><p>Build /weight-loss/, /microneedling/, and /skin-boosters/ pages. Each needs 600+ words, a keyword-optimised H1, FAQ section, patient-facing copy, treatment benefits, and a prominent "Book Now" CTA with WhatsApp link.</p></div>
       </div>
       <div class="tl-item">
         <div class="tl-time">Week 3</div>
         <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--rose);box-shadow:0 0 0 3px rgba(162,103,105,0.3);"></div></div>
-        <div class="tl-card">
-          <h4>Add Schema Markup to All Pages</h4>
-          <p>Using RankMath's built-in schema builder, add LocalBusiness + MedicalBusiness schema to the homepage, Service schema to each treatment page, and FAQ schema blocks with 4–6 questions per page. This can generate rich results within 2–4 weeks.</p>
-        </div>
+        <div class="tl-card"><h4>Add Schema Markup to All Pages</h4><p>Using RankMath's built-in schema builder, add LocalBusiness + MedicalBusiness schema to the homepage, Service schema to each treatment page, and FAQ schema blocks with 4–6 questions per page. This can generate rich results within 2–4 weeks.</p></div>
       </div>
       <div class="tl-item">
         <div class="tl-time">Month 1</div>
         <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--plum);box-shadow:0 0 0 3px rgba(59,31,43,0.3);"></div></div>
-        <div class="tl-card">
-          <h4>Publish First 2 Blog Posts</h4>
-          <p>Targets: (1) "How Many Laser Hair Removal Sessions Do You Need for Dark Skin in Nairobi?" — informational, targets dark skin concerns, very high local intent. (2) "Botox vs Fillers: Which Is Right For You? [Nairobi Guide]" — comparison content that captures mid-funnel searches and links to both service pages.</p>
-        </div>
+        <div class="tl-card"><h4>Publish First 2 Blog Posts</h4><p>Targets: (1) "How Many Laser Hair Removal Sessions Do You Need for Dark Skin in Nairobi?" — informational, targets dark skin concerns, very high local intent. (2) "Botox vs Fillers: Which Is Right For You? [Nairobi Guide]" — comparison content that captures mid-funnel searches and links to both service pages.</p></div>
       </div>
       <div class="tl-item">
         <div class="tl-time">Month 1</div>
         <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--plum);box-shadow:0 0 0 3px rgba(59,31,43,0.3);"></div></div>
-        <div class="tl-card">
-          <h4>Launch Review Generation Campaign</h4>
-          <p>Send a post-appointment WhatsApp message to every client with a direct GBP review link. Train front-desk staff to ask for reviews verbally after positive appointments. Target: 25 new reviews in Month 1. Reviews are a confirmed local ranking factor and Vivace is already positioned well at 4.9★.</p>
-        </div>
+        <div class="tl-card"><h4>Launch Review Generation Campaign</h4><p>Send a post-appointment WhatsApp message to every client with a direct GBP review link. Train front-desk staff to ask for reviews verbally after positive appointments. Target: 25 new reviews in Month 1. Reviews are a confirmed local ranking factor and Vivace is already positioned well at 4.9★.</p></div>
       </div>
     </div>
   </div>
@@ -1480,15 +1172,10 @@ footer {
       <a href="#roadmap">Roadmap</a>
       <a href="#kpis">KPIs</a>
     </div>
-    <!-- <div class="footer-note">
-      vivace.co.ke · info@vivace.co.ke<br>
-      +254 798 766 666
-    </div> -->
   </div>
 </footer>
 
 <script>
-// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
@@ -1498,14 +1185,12 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Stagger children of reveal elements
-document.querySelectorAll('.audit-grid .audit-card, .kw-grid .kw-card, .kpi-grid .kpi-card, .tools-pillars .pillar-card').forEach((el, i) => {
+document.querySelectorAll('.audit-grid .audit-card, .kw-grid .kw-card, .kpi-grid .kpi-card, .tools-pillars .pillar-card, .comp-cards .comp-card, .moves-grid .move-card').forEach((el, i) => {
   el.style.transitionDelay = `${(i % 3) * 80}ms`;
   el.classList.add('reveal');
   observer.observe(el);
 });
 
-// KW filter (visual only)
 document.querySelectorAll('.kw-filter').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.kw-filter').forEach(b => b.classList.remove('active'));
@@ -1513,7 +1198,6 @@ document.querySelectorAll('.kw-filter').forEach(btn => {
   });
 });
 
-// Timeline stagger
 document.querySelectorAll('.tl-item').forEach((el, i) => {
   el.style.animationDelay = `${i * 0.1}s`;
 });
